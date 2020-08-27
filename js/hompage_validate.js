@@ -38,9 +38,13 @@ function checkDate(event, date) {
   if (userDate) {
     if (dt <= currentDate) {
       alert("Please select a date later then today!");
+      date.focus();
+      event.preventDefault();
     } else {
       if (dt.getDay() === 6 || dt.getDay() === 0) {
         alert("Please choose from Monday to Friday only");
+        date.focus();
+        event.preventDefault();
       } else {
         return true;
       }
